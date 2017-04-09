@@ -13,7 +13,7 @@ example(of: "PublishSubject") {
     subject.onNext("Is anyone listening?")
 
     // This guy came too late to the party.
-    // This subject only emit events for current subscribers
+    // This subject only emits events for current subscribers
     let subscriptionOne = subject.subscribe(onNext: { (val) in
         print("1) \(val)")
     }, onDisposed: {
@@ -64,7 +64,7 @@ example(of: "BehaviourSubject") {
     let subject = BehaviorSubject(value: "Initial value")
     let bag = DisposeBag()
 
-    // Bahavior subjects always emits the last event
+    // Bahavior subjects always emit the last event
     // Even if you subscribe later
     subject.onNext("X")
 
